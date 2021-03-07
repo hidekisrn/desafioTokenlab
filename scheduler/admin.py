@@ -1,9 +1,9 @@
 from django.contrib import admin
-from scheduler.models import Scheduler
+from scheduler.models import Event
 
-class Schedules(admin.ModelAdmin):
-    list_display = ('id', 'event')
-    list_display_links = ('id', 'event')
-    search_fields = ('event',)
+class Events(admin.ModelAdmin):
+    list_display = ['description','start_time', 'end_time', 'user']
+    list_display_links = ['description','start_time', 'end_time', 'user']
+    search_fields = ('description','user')
 
-admin.site.register(Scheduler, Schedules)
+admin.site.register(Event, Events)
